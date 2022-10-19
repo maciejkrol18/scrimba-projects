@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fancy">
+    <meta name="description" content="A simple password generator that lets you generate 4 passwords">
+    <meta name="keywords" content="github, html, css, js, javascript, passwords, password generator">
+        <!-- START EMBED TAGS -->
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="Fancy's Password Generator"/>
+            <meta property="og:description" content="A simple password generator that lets you generate 4 random passwords at once"/>
+            <meta property="og:url" content="https://fancybaguette.github.io/projects/password-generator"/>
+            <meta property="og:image" content="https://fancybaguette.github.io/src/imgs/screenshot8.png"/>
+        <!-- END EMBED TAGS -->
+    <title>Password generator</title>
+</head>
+<body>
+    <div class="webpage">
+
+        <main class="main">
+            <header class="header">
+                <h1>Generate a <br><span class="header__span__primary">random password</span></h1>
+                <span class="header__span__secondary">Never use an insecure password again.</span>
+                <button onclick="renderPasswords()" class="generate__button">Generate passwords</button>
+                <span class="character__count__text">How many characters should the password have?</span>
+                <div>
+                    <input class="character__count__input" type="tel" maxlength="2" name="characterInput">
+                    <button class="character__count__btn" onclick="getCharacterCount()">Apply</button>
+                </div>
+                <span style="margin-top: .3rem;" class="character__count__text">Current character count: <span class="character__count__display"></span> </span>
+            </header>
+
+            <div class="spacer"></div>
+
+            <div class="results__container">
+                <div class="password__container">
+                    <span class="first-password"> <span style="color: gray">...</span> </span>
+                </div>
+                <div class="password__container">
+                    <span class="second-password"> <span style="color: gray">...</span> </span>
+                </div>
+                <div class="password__container">
+                    <span class="third-password"> <span style="color: gray">...</span> </span>
+                </div>
+                <div class="password__container">
+                    <span class="fourth-password"> <span style="color: gray">...</span> </span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+<script src="index.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+</html>

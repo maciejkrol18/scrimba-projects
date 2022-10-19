@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice generator</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Invoice creator</h1>
+        <h2>Thanks for choosing GoodCorp, LLC!</h2>
+    </header>
+
+    <main class="main-container">
+
+        <div class="button-container">
+            <button class="gig-btn gig-1"></button>
+            <button class="gig-btn gig-2"></button>
+            <button class="gig-btn gig-3"></button>
+            <!-- <button class="gig-btn gig-4"></button>
+            <button class="gig-btn gig-5"></button> -->
+        </div>
+
+        <div class="task-summary">
+            <div class="main-container-header">
+                <span>TASK</span>
+                <span>TOTAL</span>
+            </div>
+
+            <div class="tasks-container">
+                <ul class="tasks-list"></ul>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="main-container-header footer-header">
+                <span>NOTES</span>
+                <span>TOTAL AMOUNT</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+                <span class="notes">We accept cash, credit card, or PayPal</span>
+                <span class="total-amount">$0</span>
+            </div>
+
+            <button class="send-btn"><img src="Icon.png">Send invoice</button>
+        </footer>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

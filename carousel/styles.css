@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background-color: #0c1114;
+    background-image: url(./images/layered-waves-haikei.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+button {
+    cursor: pointer;
+}
+
+.root {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-title {
+    color: rgb(241, 55, 55);
+    font-weight: 800;
+}
+
+.carousel {
+    max-width: 600px;
+    position: relative;
+    margin: 2.5rem 2.5rem 0 2.5rem;
+}
+
+.carousel .carousel-item,
+.carousel .carousel-item-hidden {
+    display: none;
+    position: relative;
+}
+
+.carousel .carousel-item-visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+}
+
+.carousel .carousel-item .carousel-item-title {
+    position: absolute;
+    padding: 1rem 20px;
+    width: 100%;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, black);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel .carousel-item .carousel-item-title h3,
+.carousel .carousel-item .carousel-item-title span {
+    color: whitesmoke;
+    margin: 0;
+    text-shadow: 1px 1px 1px black;
+}
+
+.carousel .carousel-item .carousel-item-title img {
+    align-self: center;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.carousel .carousel-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel-actions button {
+    border-radius: 50px;
+    background-color: white;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel .carousel-actions button {
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    color: white;
+    font-weight: 900;
+}
+
+.carousel .carousel-actions button#carousel-button-prev {
+    margin-left: 20px;
+    /* background-image: url(./images/chevron-left.svg); */
+}
+
+.carousel .carousel-actions button#carousel-button-next {
+    margin-right: 20px;
+    /* background-image: url(./images/chevron-right.svg); */
+}
+
+.slide-list {
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.slide-list-btn {
+    border: 0;
+    width: 25px;
+    height: 9px;
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
