@@ -1,4 +1,4 @@
-const slides = document.getElementsByClassName('carousel-item');
+const slides = document.querySelectorAll('.carousel__item');
 let slidePosition = 0;
 const totalSlides = slides.length;
 
@@ -7,56 +7,47 @@ document.getElementById('carousel-button-prev').addEventListener('click', moveTo
 
 const slidesListEl =  document.querySelector('.slide-list');
 
-// for (let i = 0; i < totalSlides; i++) {
-//     slidesListEl.innerHTML +=
-//     `
-//         <button class="slide-list-btn" onclick="changeSlide(${i})"></button>
-//     `
-// }
-
 for (let i = 0; i < totalSlides; i++) {
     slidesListEl.innerHTML +=
     `
-        <button class="slide-list-btn" data-slideIndex="${i}"></button>
+        <button class="slide-list-btn" data-slideIndex="${i}" aria-label="Change to slide ${i}"></button>
     `
 }
 
 const slideListBtns = document.querySelectorAll(".slide-list-btn");
 
-slideListBtns.forEach(button => {
-    button.addEventListener("click", () => {
-        let index = parseInt(button.getAttribute("data-slideIndex"));
+slideListBtns.forEach(el => {
+    el.addEventListener("click", () => {
+        let index = parseInt(el.getAttribute("data-slideIndex"));
         changeSlide(index);
     })
 });
 
-
+// Render the buttons for changing the slides under the carousel
 function renderSlideList() {
-    const activeColor = "#f7f7f790";
-    const nonActiveColor = "#33333380";
 
     for (let slideBtn of slideListBtns) {
-        slideBtn.style.backgroundColor = nonActiveColor;
+        slideBtn.style.backgroundColor = 'var(--clr-carousel-action-btn-inactive)';
     }
 
-    slideListBtns[slidePosition].style.backgroundColor = activeColor;
+    slideListBtns[slidePosition].style.backgroundColor = 'var(--clr-carousel-action-btn-active)';
 }
 
-renderSlideList()
-
+// Function for the slide changing buttons under the carousel
 function changeSlide(slideIndex) {
     hideAllSlides();
 
-    slides[slideIndex].classList.add("carousel-item-visible");
+    slides[slideIndex].classList.add("carousel__item--visible");
     slidePosition = slideIndex;
 
     renderSlideList()
 }
 
+// Function to reset the modifier classes of all carousel items, which is called on every slide change
 function hideAllSlides() {
     for (let slide of slides) {
-        slide.classList.remove('carousel-item-visible');
-        slide.classList.add('carousel-item-hidden');
+        slide.classList.remove('carousel__item--visible');
+        slide.classList.add('carousel__item--hidden');
     }
 }
 
@@ -69,7 +60,7 @@ function moveToNextSlide() {
         slidePosition++;
     }
     
-    slides[slidePosition].classList.add("carousel-item-visible");
+    slides[slidePosition].classList.add("carousel__item--visible");
     renderSlideList()
 }
 
@@ -82,9 +73,11 @@ function moveToPrevSlide() {
         slidePosition--;
     }
     
-    slides[slidePosition].classList.add("carousel-item-visible");
+    slides[slidePosition].classList.add("carousel__item--visible");
     renderSlideList()
 }
+
+renderSlideList()
 
 // setInterval(() => {
 //     moveToNextSlide();
