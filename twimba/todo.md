@@ -1,4 +1,4 @@
-# Scrimba's Stretchgoals
+# Scrimba's Stretch Goals
 
 - Add the ability to reply to a specific tweet
 - Save tweets, likes and retweets to localStorage
