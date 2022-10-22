@@ -7,18 +7,18 @@ document.getElementById('carousel-button-prev').addEventListener('click', moveTo
 
 const slidesListEl =  document.querySelector('.slide-list');
 
-for (let i = 0; i < totalSlides; i++) {
+slides.forEach((el, i) => {
     slidesListEl.innerHTML +=
     `
-        <button class="slide-list-btn" data-slideIndex="${i}" aria-label="Change to slide ${i}"></button>
+        <button class="slide-list-btn" data-slide-index="${i}" aria-label="Change to slide ${i}"></button>
     `
-}
+})
 
 const slideListBtns = document.querySelectorAll(".slide-list-btn");
 
 slideListBtns.forEach(el => {
     el.addEventListener("click", () => {
-        let index = parseInt(el.getAttribute("data-slideIndex"));
+        let index = parseInt(el.dataset.slideIndex);
         changeSlide(index);
     })
 });
@@ -45,10 +45,10 @@ function changeSlide(slideIndex) {
 
 // Function to reset the modifier classes of all carousel items, which is called on every slide change
 function hideAllSlides() {
-    for (let slide of slides) {
-        slide.classList.remove('carousel__item--visible');
-        slide.classList.add('carousel__item--hidden');
-    }
+    slides.forEach((el) => {
+        el.classList.remove('carousel__item--visible');
+        el.classList.add('carousel__item--hidden');
+    })
 }
 
 function moveToNextSlide() {
