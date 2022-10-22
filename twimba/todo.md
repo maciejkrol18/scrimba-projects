@@ -6,7 +6,7 @@
 
 # Personal
 
-- Color the comment button
+- Improve accessibility
 - Comment/like/retweet buttons hover states
 - Remake the UI to resemble twitter more
 - More code cleanup (missing semicolons, spacing etc.)
