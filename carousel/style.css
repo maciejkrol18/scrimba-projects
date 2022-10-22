@@ -163,14 +163,6 @@ LAYOUT
     background-position: center;
 }
 
-.carousel-actions button#carousel-button-prev {
-    background-image: url(./images/chevron-left.svg);
-}
-
-.carousel-actions button#carousel-button-next {
-    background-image: url(./images/chevron-right.svg);
-}
-
 .slide-list {
     padding: 0;
     margin-top: 1rem;
