@@ -3,20 +3,24 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 // Event listeners
 
-document.addEventListener('click', function(e){
-    if(e.target.dataset.like){
+document.addEventListener('click', e => {
+    // This is so bad but that's the way it was setup in Scrimba and i don't really want to bother with rewriting all of that
+    if (e.target.dataset.like) {
        handleLikeClick(e.target.dataset.like) ;
     }
-    else if(e.target.dataset.retweet){
+    else if (e.target.dataset.retweet) {
         handleRetweetClick(e.target.dataset.retweet);
     }
-    else if(e.target.dataset.reply){
+    else if (e.target.dataset.reply) {
         handleReplyClick(e.target.dataset.reply);
     }
-    else if(e.target.id === 'tweet-btn'){
+    else if (e.target.id === 'tweet-btn') {
         handleTweetBtnClick();
     }
-})
+    else if (e.target.dataset.userreply) {
+        replyToTweet(e.target.dataset.userreply)
+    }
+});
 
 // Event handlers
  
@@ -76,12 +80,30 @@ function handleTweetBtnClick() {
     }
 }
 
+function replyToTweet(tweetId) {
+    const targetTweetObj = tweetsData.filter((tweet) => {
+        return tweet.uuid === tweetId;
+    })[0];
+
+    targetTweetObj.replies.unshift({
+        handle: `@Scrimba`,
+        profilePic: `images/scrimbalogo.png`,
+        tweetText: `${document.getElementById(`textarea-${tweetId}`).value}`,
+    });
+
+    render();
+}
+
+function deleteTweet(tweetId) {
+
+}
+
 // Get HTML boilerplate from the 'data.js' array
 
 function getFeedHtml() {
     let feedHtml = ``;
     
-    tweetsData.forEach((tweet) => {
+    tweetsData.forEach(tweet => {
     
         // Like/retweet colors
 
@@ -100,8 +122,8 @@ function getFeedHtml() {
         let repliesHtml = '';
         
         if (tweet.replies.length > 0){
-            tweet.replies.forEach(function(reply){
-                repliesHtml+=
+            tweet.replies.forEach(reply => {
+                repliesHtml +=
                 `
                     <div class="tweet-reply">
                         <div class="tweet-inner">
@@ -130,21 +152,21 @@ function getFeedHtml() {
                         <div class="tweet-details">
 
                             <span class="tweet-detail">
-                                <i class="fa-regular fa-comment-dots"
+                                <i class="fa-regular fa-comment-dots" aria-label="Show replies"
                                 data-reply="${tweet.uuid}"
                                 ></i>
                                 ${tweet.replies.length}
                             </span>
 
                             <span class="tweet-detail">
-                                <i class="fa-solid fa-heart ${likeIconClass}"
+                                <i class="fa-solid fa-heart ${likeIconClass}" aria-label="Like"
                                 data-like="${tweet.uuid}"
                                 ></i>
                                 ${tweet.likes}
                             </span>
 
                             <span class="tweet-detail">
-                                <i class="fa-solid fa-retweet ${retweetIconClass}"
+                                <i class="fa-solid fa-retweet ${retweetIconClass}" aria-label="Retweet"
                                 data-retweet="${tweet.uuid}"
                                 ></i>
                                 ${tweet.retweets}
@@ -156,6 +178,13 @@ function getFeedHtml() {
                 </div>
 
                 <div class="hidden" id="replies-${tweet.uuid}">
+                    <div class="tweet-input-area tweet-input-area--reply">
+                        <img src="images/scrimbalogo.png" class="profile-pic">
+                        <textarea class="textarea-reply" placeholder="Tweet your reply" id="textarea-${tweet.uuid}"></textarea>
+                    </div>
+                    <div class="reply-btn-wrapper">
+                        <button class="reply-btn" data-userreply="${tweet.uuid}">Reply</button>
+                    </div>
                     ${repliesHtml}
                 </div>   
             </div>
@@ -167,6 +196,7 @@ function getFeedHtml() {
 // Render the feed
 
 function render() {
+    localStorage.setItem('twimbaTweets', JSON.stringify(tweetsData));
     document.getElementById('feed').innerHTML = getFeedHtml();
 }
 

@@ -7,6 +7,7 @@ VARIABLES
 :root {
     --clr-liked: hsl(0, 100%, 50%);
     --clr-retweeted: hsl(120, 72%, 48%);
+    --clr-brand: hsl(204, 87%, 47%);
 }
 
 /* ===============
@@ -34,7 +35,7 @@ body {
 }
 
 h1 {
-    color: hsl(204, 87%, 47%);
+    color: var(--clr-brand);
     margin-bottom: 10px;
     font-size: 20px;
 }
@@ -46,6 +47,7 @@ h1 {
 /* Icons */
 
 i {
+    position: relative;
     font-size: 15px;
     cursor: pointer;
 }
@@ -66,6 +68,18 @@ i {
   color: var(--clr-retweeted);
 }
 
+i[data-reply]:hover {
+    color: var(--clr-brand);
+}
+
+i[data-like]:hover {
+    color: var(--clr-liked);
+}
+
+i[data-retweet]:hover {
+    color: var(--clr-retweeted);
+}
+
 /* ===============
 LAYOUT
 ================== */
@@ -84,15 +98,28 @@ header i {
     font-size: 1em;
 }
 
+
+/* Textarea & buttons */
+
+textarea {
+    border: none;
+    resize: none;
+}
+
 .tweet-input-area {
     display: flex;
     align-items: flex-start;
     gap: 10px;
 }
 
-/* Textarea & buttons */
+.tweet-input-area--reply {
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0px;
+    margin: 20px 0 10px 40px;
+    width: 80%;
+}
 
-textarea {
+.new-post-input {
     border: none;
     resize: none;
     padding: 10px;
@@ -148,6 +175,22 @@ button {
     padding: 20px 0 0 0px;
     margin: 10px 0 10px 40px;
     width: 80%;
+}
+
+.textarea-reply {
+    width: 100%;
+}
+
+.reply-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reply-btn {
+    font-size: 16px;
+    padding: 5px 3.8px;
+    width: 40%;
+    margin-right: 20px;
 }
 
 .handle {
