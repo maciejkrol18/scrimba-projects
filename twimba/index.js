@@ -4,7 +4,12 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 // Event listeners
 
 document.addEventListener('click', e => {
-    // This is so bad but that's the way it was setup in Scrimba and i don't really want to bother with rewriting all of that
+    /*
+
+    This is so bad but that's the way it was setup in Scrimba and i don't really want to bother with rewriting all of that.
+    I might redo it later but i'd rather move on onto other projects.
+
+    */
     if (e.target.dataset.like) {
        handleLikeClick(e.target.dataset.like) ;
     }
@@ -92,10 +97,6 @@ function replyToTweet(tweetId) {
     });
 
     render();
-}
-
-function deleteTweet(tweetId) {
-
 }
 
 // Get HTML boilerplate from the 'data.js' array
