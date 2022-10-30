@@ -5,6 +5,7 @@ Every project folder has a readme file with the date of each project's completio
 
 |  **Project title** |                               **Live site link**                              |
 |:------------------:|:-----------------------------------------------------------------------------:|
+|    Ordering app    | [click](https://fancybaguette.github.io/scrimba-projects/ordering-app/)       |
 |       Twimba       |       [click](https://fancybaguette.github.io/scrimba-projects/twimba/)       |
 | Password generator | [click](https://fancybaguette.github.io/scrimba-projects/password-generator/) |
 |      Carousel      |      [click](https://fancybaguette.github.io/scrimba-projects/carousel/)      |
