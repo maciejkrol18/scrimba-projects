@@ -262,7 +262,7 @@ hr {
 
 /* Opening and closing of a dialog element stops working properly with flexbox set on it. [open] is a fix to that. */
 .modal[open] {
-    min-width: 450px;
+    min-width: 40%;
     filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
     border: 0;
 
