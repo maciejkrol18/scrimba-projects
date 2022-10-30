@@ -1,4 +1,6 @@
-# 📅 In progress
+# 📅 30.10.2022
+
+**Module 5 solo project**
 
 ## Requirements
 - Follow the design spec

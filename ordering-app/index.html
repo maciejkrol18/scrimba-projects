@@ -12,21 +12,52 @@
     <title>Restaurant ordering app</title>
 </head>
 <body>
-    <header class="header">
-        <div>
-            <h1>Jimmy's Diner</h1>
-            <h2>The best burgers and pizzas in town.</h2>
-        </div>
-    </header>
+    <div class="root">
 
-    <main class="main">
-
-        <section class="menu-container" id="menu-container"></section>
-
-        <section class="your-order" id="your-order"></section>
-
-    </main>
+        <header class="header">
+            <div>
+                <h1>Jimmy's Diner</h1>
+                <h2>The best burgers and pizzas in town.</h2>
+            </div>
+        </header>
     
-    <script src="./index.js" type="module"></script>
+        <main class="main">
+    
+            <section class="menu-container">
+                <ul class="menu-list" id="menu-list"></ul>
+            </section>
+    
+            <section class="your-order" id="your-order">
+                <h3>Your order</h3>
+                <ul class="order-list" id="order-list"></ul>
+    
+                <hr>
+    
+                <div class="total-price-wrapper">
+                    <p class="price">Total price:</p> <p class="price" id="total-price-el"></p>
+                </div>
+    
+                <button class="complete-order-btn" id="complete-order-btn">Complete order</button>
+            </section>
+    
+        </main>
+
+    </div>
+
+    <!-- Modals -->
+
+    <dialog class="modal" id="complete-order-modal">
+        <h1>Enter card details</h1>
+
+        <form action="#" class="modal-form" id="payment-form">
+            <input type="text" name="payment-form-username" id="payment-form-username" placeholder="Enter your name" required>
+            <input type="text" name="payment-form-card-number" id="payment-form-card-number" placeholder="Enter card number" required>
+            <input type="text" name="payment-form-ccv" id="payment-form-ccv" placeholder="Enter CCV" required>
+
+            <button type="submit" class="modal-form-submit-btn">Pay</button>
+        </form>
+    </dialog>
+    
+    <script src="./index.js" type="module" defer></script>
 </body>
 </html>
