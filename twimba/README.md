@@ -1,2 +1,2 @@
-# 📅 In progress
-**📝 Check incoming changes [here](https://github.com/FancyBaguette/scrimba-projects/blob/main/twimba/todo.md)**
+# 📅 30.10.2022
+*Done without finishing all stretch goals*

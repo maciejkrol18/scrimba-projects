@@ -1,0 +1,77 @@
+@import url('https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css');
+
+/* ===============
+VARIABLES
+================== */
+
+:root {
+    --clr-btn-border: hsl(0, 0%, 87%);
+    --clr-menu-item-ingredients: hsl(0, 0%, 55%);
+    --clr-menu-item-border: hsl(0, 0%, 82%);
+
+    --fs-header-heading: 2.5rem;
+    --fs-header-subtitle: 1.375rem;
+
+    --fnt-primary: 'Smythe', cursive;
+    --fnt-secondary: 'Verdana', sans-serif;
+}
+
+/* ===============
+GENERAL
+================== */
+
+body {
+    font-family: var(--fnt-primary);
+}
+
+.root {
+    min-height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ===============
+TYPOGRAPHY
+================== */
+
+.header {
+    color: #fff;
+    text-shadow: 5px 5px 5px black;
+}
+
+.header h1 {
+    font-size: var(--fs-header-heading);
+}
+
+.header h2 {
+    font-size: var(--fs-header-subtitle);
+}
+
+.header h1, 
+.header h2 {
+    font-weight: 400;
+}
+
+/* ===============
+LAYOUT
+================== */
+
+.header {
+    background-image: url(./images/burger.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 160px;
+}
+
+.main {
+    min-height: calc(100vh - 160px);
+}
+
+/* ===============
+MEDIA QUERIES
+================== */
