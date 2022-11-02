@@ -6,8 +6,12 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 document.addEventListener('click', e => {
     /*
 
+    !!!
+
     This is so bad but that's the way it was setup in Scrimba and i don't really want to bother with rewriting all of that.
     I might redo it later but i'd rather move on onto other projects.
+
+    !!!
 
     */
     if (e.target.dataset.like) {
@@ -24,6 +28,9 @@ document.addEventListener('click', e => {
     }
     else if (e.target.dataset.userreply) {
         replyToTweet(e.target.dataset.userreply)
+    }
+    else if (e.target.dataset.delete) {
+        handleDeleteBtnClick(e.target.dataset.delete);
     }
 });
 
@@ -48,6 +55,8 @@ function handleRetweetClick(tweetId) {
     const targetTweetObj = tweetsData.filter((tweet) => {
         return tweet.uuid === tweetId;
     })[0]
+
+    console.log(targetTweetObj);
     
     if (targetTweetObj.isRetweeted) {
         targetTweetObj.retweets--;
@@ -78,6 +87,7 @@ function handleTweetBtnClick() {
             isLiked: false,
             isRetweeted: false,
             uuid: uuidv4(),
+            byUser: true,
         })
 
         render();
@@ -99,12 +109,17 @@ function replyToTweet(tweetId) {
     render();
 }
 
+function handleDeleteBtnClick(index) {
+    tweetsData.splice(index, 1);
+    render();
+}
+
 // Get HTML boilerplate from the 'data.js' array
 
 function getFeedHtml() {
     let feedHtml = ``;
     
-    tweetsData.forEach(tweet => {
+    tweetsData.forEach((tweet, index) => {
     
         // Like/retweet colors
 
@@ -121,6 +136,7 @@ function getFeedHtml() {
         }
         
         let repliesHtml = '';
+        let deleteBtnHtml = '';
         
         if (tweet.replies.length > 0){
             tweet.replies.forEach(reply => {
@@ -137,6 +153,16 @@ function getFeedHtml() {
                     </div>
                 `
             });
+        }
+
+        if (tweet.byUser) {
+            deleteBtnHtml = 
+            `
+                <span class="tweet-detail">
+                <i class="fa-solid fa-trash" aria-label="Delete"
+                data-delete="${index}"
+                ></i>
+            `
         }
           
         feedHtml += 
@@ -172,6 +198,9 @@ function getFeedHtml() {
                                 ></i>
                                 ${tweet.retweets}
                             </span>
+
+                            ${deleteBtnHtml}
+                        </span>
 
                         </div>
 

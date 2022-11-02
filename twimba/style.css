@@ -8,6 +8,7 @@ VARIABLES
     --clr-liked: hsl(0, 100%, 50%);
     --clr-retweeted: hsl(120, 72%, 48%);
     --clr-brand: hsl(204, 87%, 47%);
+    --clr-delete: hsl(0, 77%, 58%);
 }
 
 /* ===============
@@ -50,6 +51,7 @@ i {
     position: relative;
     font-size: 15px;
     cursor: pointer;
+    max-height: 100%;
 }
 
 .tweet-details i {
@@ -78,6 +80,10 @@ i[data-like]:hover {
 
 i[data-retweet]:hover {
     color: var(--clr-retweeted);
+}
+
+i[data-delete]:hover {
+    color: var(--clr-delete);
 }
 
 /* ===============

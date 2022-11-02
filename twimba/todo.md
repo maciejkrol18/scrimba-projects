@@ -2,11 +2,11 @@
 
 - ~~Add the ability to reply to a specific tweet~~
 - Save tweets, likes and retweets to localStorage
-- Allow a user to delete a tweet
+- ~~Allow a user to delete a tweet~~
 
 # Personal
 
-- Improve accessibility
+- ~~Improve accessibility~~
 - ~~Comment/like/retweet buttons hover states~~
 - ~~More code cleanup (missing semicolons, spacing etc.)~~
 
