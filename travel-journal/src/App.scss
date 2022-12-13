@@ -1,0 +1,11 @@
+@use './colors.scss'; 
+
+body {
+    color: colors.$neutral-200;
+}
+
+.articlesContainer {
+    max-width: 768px;
+    padding-inline: 1rem;
+    margin-inline: auto;
+}

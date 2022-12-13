@@ -1,11 +1,27 @@
 import './App.scss'
+import Card from './components/Card/Card'
+import Header from './components/Header/Header'
+import data from './data/locations.js'
 
 const App = () => {
+    
     return (
-        <p>Lorem, ipsum dolor.</p>
+        <>
+            <Header/>
+
+            <main className="articlesContainer">
+                {
+                    data.map((item, index) => {
+                        return (
+                            <Card key={index} item={item}/>
+                        )
+                    })
+                }
+            </main>
+
+        </>
     )
+
 }
-
-
 
 export default App

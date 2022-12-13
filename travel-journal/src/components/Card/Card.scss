@@ -1,0 +1,61 @@
+@use '../../colors.scss';
+
+.card {
+    display: flex;
+    gap: 1.1875rem;
+    padding-block: 1.125rem;
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid #e3e3e3;
+    }
+}
+
+.cardImage {
+    min-width: 125px;
+    max-height: 228px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cardMeta {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: colors.$neutral-100;
+    }
+}
+
+.cardLocation {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-transform: uppercase;
+    letter-spacing: calc(17 * 0.01em);
+
+    img {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+.title {
+    margin-block-end: 1.5rem;
+}
+
+.cardDate {
+    display: block;
+    font-weight: 700;
+    margin-block-end: .625rem;
+}
+
+.cardDescription {
+    text-align: justify;
+}
+
+@media (min-width: 461px) {
+    .cardMeta {
+        flex-direction: row;
+        gap: .75rem;
+    }
+}
