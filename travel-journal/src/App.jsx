@@ -1,6 +1,6 @@
 import './App.scss'
-import Card from './components/Card/Card'
-import Header from './components/Header/Header'
+import Card from './components/Card/Card.jsx'
+import Header from './components/Header/Header.jsx'
 import data from './data/locations.js'
 
 const App = () => {
