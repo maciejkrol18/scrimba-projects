@@ -12,9 +12,15 @@
 
 .cardImage {
     min-width: 125px;
+    max-width: 144px;
     max-height: 228px;
     object-fit: cover;
     border-radius: 5px;
+    flex: 1;
+}
+
+.cardContent {
+    flex: 1;
 }
 
 .cardMeta {
