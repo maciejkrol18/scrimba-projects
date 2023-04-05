@@ -1,8 +1,6 @@
 # 🎓 Scrimba projects
-**A repository for all of my projects that i've done for the Scrimba's Frontend Developer Career Path course.**<br><br>
 
-Most of them are so called 'solo projects', where you're just given a design and the requirements of what should be built.<br><br>
-Every project folder has a README file with the date of each project's completion date (plus eventual update dates and/or additional notes). I plan to refactor some of the **older** projects in the future using my new knowledge. Below you can find a table with links to a live preview site for every of the projects - the entries are sorted from newest to oldest.<br><br>
+This is a repository for all of the projects i've done for Scrimba's Frontend Developer Career Path course up until "React Basics" chapter - from now i will upload them as separate repositories as they grow in complexity. Most of the projects are solo project (requirements only, without instructions). Every project folder has a README with the project's completion date and eventual notes. Below you can find a table with links to live previews of each project. The entries are sorted from newest to oldest.
 
 |  **Project title** |                               **Live site link**                              |
 |:------------------:|:-----------------------------------------------------------------------------:|
