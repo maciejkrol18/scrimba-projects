@@ -4,12 +4,12 @@ This is a repository for all of the projects i've done for Scrimba's Frontend De
 
 |  **Project title** |                               **Live site link**                              |
 |:------------------:|:-----------------------------------------------------------------------------:|
-|    Ordering app    | [click](https://fancybaguette.github.io/scrimba-projects/ordering-app/)       |
-|       Twimba       |       [click](https://fancybaguette.github.io/scrimba-projects/twimba/)       |
-| Password generator | [click](https://fancybaguette.github.io/scrimba-projects/password-generator/) |
-|      Carousel      |      [click](https://fancybaguette.github.io/scrimba-projects/carousel/)      |
-|   Invoice creator  |   [click](https://fancybaguette.github.io/scrimba-projects/invoice-creator/)  |
-|      Dice game     |      [click](https://fancybaguette.github.io/scrimba-projects/dice-game/)     |
+|    Ordering app    | [click](https://maciejkrol18.github.io/scrimba-projects/ordering-app/)        |
+|       Twimba       |       [click](https://maciejkrol18.github.io/scrimba-projects/twimba/)        |
+| Password generator | [click](https://maciejkrol18.github.io/scrimba-projects/password-generator/)  |
+|      Carousel      |      [click](https://maciejkrol18.github.io/scrimba-projects/carousel/)       |
+|   Invoice creator  |   [click](https://maciejkrol18.github.io/scrimba-projects/invoice-creator/)   |
+|      Dice game     |      [click](https://maciejkrol18.github.io/scrimba-projects/dice-game/)      |
 
 https://scrimba.com/<br>
 https://scrimba.com/learn/frontend
